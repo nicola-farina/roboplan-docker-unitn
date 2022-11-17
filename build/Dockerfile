@@ -4,8 +4,6 @@ ARG DEBIAN_FRONTEND=noninteractive
 
 ENV SHARED_DIR=/root/shared
 
-COPY ./.bashrc /root
-
 RUN apt install -y wget gpg && \
     wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg && \
     install -D -o root -g root -m 644 packages.microsoft.gpg /etc/apt/keyrings/packages.microsoft.gpg && \
@@ -22,4 +20,7 @@ RUN apt update && \
     apt install -y git nano && \
     apt autoremove -y
 
-ENTRYPOINT [ "/bin/bash" ]
+COPY ./.bashrc /root
+
+ENTRYPOINT [ "/ros_entrypoint.sh" ]
+CMD [ "bash" ]

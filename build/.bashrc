@@ -117,7 +117,6 @@ if ! shopt -oq posix; then
 fi
 
 # custom
-source /ros_entrypoint.sh
-source ~/startup.sh
+source /root/startup.sh
 
 alias code="code --no-sandbox --user-data-dir $SHARED_DIR/.code"

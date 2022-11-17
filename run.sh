@@ -23,4 +23,4 @@ else
     docker compose -f "$COMPOSE_FILE" up -d --wait
 fi
 
-docker compose -f "$COMPOSE_FILE" exec -it ros2 /bin/bash
+docker compose -f "$COMPOSE_FILE" exec -it ros2 /ros_entrypoint.sh bash

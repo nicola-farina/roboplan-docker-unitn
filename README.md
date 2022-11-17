@@ -1,6 +1,12 @@
 # Docker environment for _Robot Planning and its Application_
 This repository contains the tools to create and use a customized Docker environment for the _Robot Planning and its Applications_ course @ University of Trento.
 
+## Table of contents
+* [Features](#features)
+* [Setup](#setup)
+* [Usage](#usage)
+* [Known Problems](#known-problems)
+
 ## Features
 * A Docker image that builds upon the `pla10/ros2_humble:amd64` provided during the course, which includes out-of-the-box:
     * Visual Studio Code

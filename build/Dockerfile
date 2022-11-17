@@ -22,4 +22,4 @@ RUN apt update && \
     apt install -y git nano && \
     apt autoremove -y
 
-ENTRYPOINT [ "/ros_entrypoint.sh" ]
+ENTRYPOINT [ "/bin/bash" ]

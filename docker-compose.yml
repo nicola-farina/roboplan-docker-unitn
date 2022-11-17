@@ -1,0 +1,21 @@
+version: "3.8"
+name: "roboplanning"
+
+services:
+  ros2:
+    build:
+      context: build
+    environment:
+      - DISPLAY=${DISPLAY}
+      - SSH_AUTH_SOCK=/ssh-agent
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+      - ${ROBOPLAN_VOLUME}:/root/shared:rw
+      - ${HOME}/.ssh:/root/.ssh:ro
+      - ${SSH_AUTH_SOCK}:/ssh-agent:ro
+    container_name: ros2
+    hostname: ros2
+    network_mode: host
+    stdin_open: true
+    tty: true 
+    entrypoint: /bin/bash
